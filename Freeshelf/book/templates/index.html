@@ -1,20 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
-<body>
-  <p>Hello</p>
 
-  {% for book in books %}
+{% extends "base.html" %} 
 
-  {{book_list}}
-
-  {% endfor %}
+{% block body %}
 
 
-</body>
-</html>
+<main>
+    <section id="books">
+      <h2>Recently added books</h2>
+      <div class="mv3">
+        <div class="normal f3"><a href="">
+            {{book_list}}
+        <p class="lh-copy">
+            {{book_list}}
+        </p>
+        <div class="flex">
+          <div class="mr2 pr2 bw1 br green">
+            {{num_fav}}
+          </div>
+          <div class="mr2 pr2 bw1 br">
+            {{date_adde}}
+          </div>
+          <div>
+            Category: <a href="">{{category}}</a>
+          </div>
+        </div>
+      </div>
+    
+  
+        <div class="w-25 ml5">
+          <img src="">
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+
+
+
+
+
+{% endblock %}
+
+
+   

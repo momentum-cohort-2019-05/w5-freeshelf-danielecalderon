@@ -23,4 +23,5 @@ urlpatterns = [
 
 urlpatterns += [
     path('book/', include('book.urls')),
+    #path('accounts/', include('registration.backends.default.urls')),
 ]

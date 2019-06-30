@@ -1,16 +1,21 @@
 from django.shortcuts import render
 from .models import Book
+from django.views import generic
 
 
 def index(request):
+
     book_list = Book.objects.all()
-    
-    context = { 'book_list': book_list
+    num_books = Book.objects.all().count()
+
+    context = { 'book_list': book_list,
+                'num_books': num_books
     }
     return render(request, 'index.html' , context=context)
 
-# def book_detail(request,):
-#     book = Book.objects.get()
-#     return render(request, 'books/book_detail.html', {
-#         'book': book,
-#     })
+
+class BookListView(generic.ListView):
+    model = Book
+
+    def list_books(self):
+        return Book.objects.all()
